@@ -77,13 +77,13 @@
   <div class="container">
     <!-- SECTION 1 -->
     <div>
-      <h1>Hi IFEDAYO 🌸</h1>
+      <h1>Hi RACHEL 🌸</h1>
       <div class="flower">🌹</div>
     </div>
 
     <!-- SECTION 2 -->
     <div class="message">
-      <strong>Opemipo has a message for you 😉</strong>
+      <strong>JOMILOJU has a message for you 😉</strong>
     </div>
 
     <!-- SECTION 3 -->
@@ -116,10 +116,28 @@
       }
     }
 
-    function yesClick() {
+    <script>
+  function yesClick() {
+    // 1. Put YOUR WhatsApp number here
+    const phoneNumber = "2349061765853"; // CHANGE THIS
+
+    // 2. The message you want to receive
+    const message = "RACHEL just said YES to your Valentine 💖🥰";
+
+    // 3. WhatsApp link (DO NOT TOUCH)
+    const whatsappLink =
+      "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+
+    // 4. Open WhatsApp
+    window.open(whatsappLink, "_blank");
+
+    // 5. After WhatsApp opens, go to YES page
+    setTimeout(() => {
       window.location.href = "yes.html";
-    }
-  </script>
+    }, 1000);
+  }
+</script>
 
 </body>
 </html>
+
