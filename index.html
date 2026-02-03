@@ -97,6 +97,7 @@
     <div id="response" class="broken"></div>
   </div>
 
+  <!-- SINGLE SCRIPT BLOCK -->
   <script>
     let noCount = 0;
 
@@ -116,28 +117,26 @@
       }
     }
 
-    <script>
-  function yesClick() {
-    // 1. Put YOUR WhatsApp number here
-    const phoneNumber = "2349061765853"; // CHANGE THIS
+    function yesClick() {
+      // WhatsApp number of the sender (change this)
+      const phoneNumber = "2349061765853";
 
-    // 2. The message you want to receive
-    const message = "RACHEL just said YES to your Valentine 💖🥰";
+      // Message to be received
+      const message = "RACHEL just said YES to your Valentine 💖🥰";
 
-    // 3. WhatsApp link (DO NOT TOUCH)
-    const whatsappLink =
-      "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+      // WhatsApp link
+      const whatsappLink =
+        "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
 
-    // 4. Open WhatsApp
-    window.open(whatsappLink, "_blank");
+      // Open WhatsApp in a new tab
+      window.open(whatsappLink, "_blank");
 
-    // 5. After WhatsApp opens, go to YES page
-    setTimeout(() => {
-      window.location.href = "yes.html";
-    }, 1000);
-  }
-</script>
+      // Redirect to YES page after 1 second
+      setTimeout(() => {
+        window.location.href = "yes.html";
+      }, 1000);
+    }
+  </script>
 
 </body>
 </html>
-
