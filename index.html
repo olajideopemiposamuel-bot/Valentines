@@ -23,6 +23,7 @@
       max-width: 400px;
       text-align: center;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: all 0.5s ease;
     }
 
     h1, h2 {
@@ -118,11 +119,11 @@
     }
 
     function yesClick() {
-      // WhatsApp number of the sender (change this)
+      // WhatsApp number of the sender
       const phoneNumber = "2349061765853";
 
-      // Message to be received
-      const message = "RACHEL just said YES to your Valentine 💖🥰";
+      // WhatsApp message to be sent
+      const message = "RACHEL just said YES! JOMILOJU is the happiest person 💖🥰";
 
       // WhatsApp link
       const whatsappLink =
@@ -131,10 +132,13 @@
       // Open WhatsApp in a new tab
       window.open(whatsappLink, "_blank");
 
-      // Redirect to YES page after 1 second
-      setTimeout(() => {
-        window.location.href = "yes.html";
-      }, 1000);
+      // Update page content to show JOMILOJU is the happiest person
+      document.body.style.background = "linear-gradient(135deg, #ff758c, #ff7eb3)"; // love background
+      document.querySelector(".container").innerHTML = `
+        <h1>💖 JOMILOJU is the happiest person! 💖</h1>
+        <div style="font-size: 60px; margin: 20px;">🧸🧸</div>
+        <p style="font-size: 18px;">Thank you for saying YES! 😍</p>
+      `;
     }
   </script>
 
