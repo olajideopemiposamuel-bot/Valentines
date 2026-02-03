@@ -2,44 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Be My Valentine 💖</title>
+  <title>Be My Valentine 💘</title>
   <style>
     body {
-      height: 100vh;
       margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 100vh;
       font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      transition: background 0.5s ease;
     }
 
     .container {
-      text-align: center;
       background: white;
-      padding: 40px;
+      padding: 30px;
       border-radius: 20px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
 
-    h1 {
-      margin-bottom: 20px;
+    h1, h2 {
+      margin: 10px 0;
       color: #e63946;
     }
 
-    p {
+    .flower {
+      font-size: 50px;
+    }
+
+    .message {
+      margin: 15px 0;
       font-size: 18px;
-      margin-bottom: 30px;
     }
 
     .buttons {
+      margin-top: 20px;
       display: flex;
-      gap: 20px;
       justify-content: center;
+      gap: 20px;
     }
 
     button {
-      padding: 15px 30px;
+      padding: 12px 25px;
       font-size: 18px;
       border: none;
       border-radius: 10px;
@@ -47,57 +55,71 @@
       transition: all 0.3s ease;
     }
 
-    .yes-button {
-      background-color: #38b000;
+    .yes {
+      background: #38b000;
       color: white;
     }
 
-    .no-button {
-      background-color: #e63946;
+    .no {
+      background: #e63946;
       color: white;
+    }
+
+    .broken {
+      color: #444;
+      font-size: 20px;
+      margin-top: 15px;
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <h1>Will you be my Valentine? 💘</h1>
-    <p id="message">Please say yes 🥺</p>
+    <!-- SECTION 1 -->
+    <div>
+      <h1>Hi IFEDAYO 🌸</h1>
+      <div class="flower">🌹</div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="message">
+      <strong>Opemipo has a message for you 😉</strong>
+    </div>
+
+    <!-- SECTION 3 -->
+    <h2>Will you be my Valentine? 💘</h2>
 
     <div class="buttons">
-      <button class="yes-button" onclick="handleYesClick()">Yes</button>
-      <button class="no-button" onclick="handleNoClick()">No</button>
+      <button class="yes" onclick="yesClick()">Yes</button>
+      <button class="no" onclick="noClick()">No</button>
     </div>
+
+    <div id="response" class="broken"></div>
   </div>
 
   <script>
-    let messageIndex = 0;
-    const messages = [
-      "Are you sure? 😢",
-      "Think again 💔",
-      "Pleaseee 🥺👉👈",
-      "Don’t break my heart 😭",
-      "Last chance 😞"
-    ];
+    let noCount = 0;
 
-    function handleNoClick() {
-      const message = document.getElementById("message");
-      const yesButton = document.querySelector(".yes-button");
+    function noClick() {
+      noCount++;
 
-      message.textContent = messages[messageIndex];
-      messageIndex = (messageIndex + 1) % messages.length;
+      if (noCount === 1) {
+        document.getElementById("response").textContent =
+          "Are you sure? 🥺";
+      }
 
-      const currentSize = parseFloat(
-        window.getComputedStyle(yesButton).fontSize
-      );
-      yesButton.style.fontSize = (currentSize + 5) + "px";
+      if (noCount >= 2) {
+        document.body.style.background =
+          "linear-gradient(135deg, #434343, #000000)";
+        document.getElementById("response").innerHTML =
+          "💔 You just broke my heart...<br>Still wishing you love though 💕";
+      }
     }
 
-    function handleYesClick() {
+    function yesClick() {
       window.location.href = "yes.html";
     }
   </script>
 
 </body>
-
 </html>
